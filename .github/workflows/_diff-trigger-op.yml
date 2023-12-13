@@ -41,7 +41,7 @@ jobs:
         if: ${{ inputs.test == true }}
         run: |
           node spectrum-tokens-studio-data/.github/workflows/diff.js -action -test -source=./spectrum-tokens-studio-data/src/tokens-studio/${{ inputs.source }}/ -destination=./spectrum-tokens/packages/tokens/src/
-          echo -e "'## CABLE SCRIPT SUMMARY'" > $GITHUB_STEP_SUMMARY
+          echo -e "## CABLE SCRIPT SUMMARY" > $GITHUB_STEP_SUMMARY
           echo -e "[Running tests on ${{ inputs.source }} via git actions](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})\n\n$(cat ./logs/cout.log)" > ./logs/cout.log
       - name: Sync the token data
         if: ${{ inputs.test == false }}
